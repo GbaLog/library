@@ -3,7 +3,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 void print_books( const Library& lib )
 {
-    std::cout << "Library: " << std::endl;
+    std::cout
+        << std::endl
+        << "Library: "
+        << std::endl;
     for( const auto& it : lib.get_books() )
     {
         std::cout
@@ -33,20 +36,32 @@ void print_what_readers_have( const Library& lib )
 {
     for( const auto& it : lib.get_readers() )
     {
+        const auto& books = it.get_books();
+        if( books.size() == 0 )
+        {
+            std::cout
+                << it.get_name()
+                << " haven\'t books"
+                << std::endl;
+            continue;
+        }
+
         std::cout
             << it.get_name()
             << " have"
             << std::endl;
-        for( const auto& it2 : it.get_books() )
+
+        for( const auto& it2 : books )
         {
             std::cout
                 << '\t'
                 << it2.get_name()
                 << "/"
                 << it2.get_author()
-                << "\n\n";
+                << std::endl;
         }
     }
+    std::cout << std::endl;
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 int main()
