@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1477253679 source:d:\emptyproject\library\bdbook.cpp
+	"bdbook.hpp"
+
+1477252567 d:\emptyproject\library\bdbook.hpp
+	"stdafx.hpp"
+	"book.hpp"
+
+1477253687 d:\emptyproject\library\stdafx.hpp
+	<iostream>
+	<string>
+	<algorithm>
+	<vector>
+	<set>
+
+1477254367 d:\emptyproject\library\book.hpp
+	"stdafx.hpp"
+
+1477254116 source:d:\emptyproject\library\book.cpp
+	"book.hpp"
+
+1477330647 source:d:\emptyproject\library\library.cpp
+	"library.hpp"
+	"iofile.hpp"
+
+1477253995 d:\emptyproject\library\library.hpp
+	"stdafx.hpp"
+	"book.hpp"
+	"bdbook.hpp"
+	"reader.hpp"
+
+1477254389 d:\emptyproject\library\reader.hpp
+	"stdafx.hpp"
+	"book.hpp"
+
+1477297380 d:\emptyproject\library\iofile.hpp
+	"stdafx.hpp"
+	"reader.hpp"
+	"book.hpp"
+	<fstream>
+	<stdexcept>
+
+1477330292 source:d:\emptyproject\library\main.cpp
+	"library.hpp"
+
+1477253672 source:d:\emptyproject\library\reader.cpp
+	"reader.hpp"
+
