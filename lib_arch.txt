@@ -1,0 +1,63 @@
+Book
+    public:
+        get_name()
+        get_author()
+    private
+        name
+        author
+        
+operator<( Book, Book )
+operator==( Book, Book )
+operator==( Book, string )
+
+BDbook
+    public:
+        get_book( string name_book )
+        add_book( Book book )
+        contain( string name_book )
+        get_books_ref()
+    private:
+        set<Book> books( set - множество )
+        
+Reader
+    public:
+        get_books()
+        get_book_cref( string name_book )
+        add_book( Book book )
+        get_book( string name_book )
+        contain( string name_book )
+        get_name()
+    private:
+        set<Book> taken_books
+        string name
+        
+operator==( Reader, Reader )
+        
+IOfile
+    public:
+        static load_readers( set<Reader> readers, string name_file )
+        static load_books( set<Book> books, string name_file )
+        
+enum e_act
+{
+    e_none,     // ничего не делать
+    e_give,     // дать книгу читателю
+    e_take,     // взять книгу у читателя
+    e_register
+}
+        
+Library
+    public:
+        request( string name_reader, e_act, string = "" )
+        request( Reader, e_act, string = "" )
+        request( Reader, e_act ); // для регистрации
+        get_books()
+        get_readers()
+        get_reader( string name_reader )
+        add_book( string name_book, string name_author )
+        add_book( Book book )
+        remove_book( string name_book )
+    private:
+        is_registered( Reader )
+        BDbook BD
+        vector<Reader> readers
