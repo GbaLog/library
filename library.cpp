@@ -32,7 +32,13 @@ void Library::request( Reader& reader, e_act act, string name_book )
                 }
                 if( BD.contain( name_book ) && is_registered( reader ) )
                 {
-                    reader.add_book( BD.get_book( name_book ) );
+                    auto book = BD.get_book( name_book );
+                    std::cout
+                        << reader.get_name()
+                        << " take "
+                        << book.get_name()
+                        << std::endl;
+                    reader.add_book( book );
                 }
             }
             break;
@@ -42,7 +48,14 @@ void Library::request( Reader& reader, e_act act, string name_book )
                 {
                     return;
                 }
-                BD.add_book( reader.get_book( name_book ) );
+                auto book = reader.get_book( name_book );
+                std::cout
+                    << reader.get_name()
+                    << " return "
+                    << book.get_name()
+                    << std::endl;
+
+                BD.add_book( book );
             }
             break;
         default:
