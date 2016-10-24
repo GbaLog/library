@@ -1,0 +1,2 @@
+library.exe
+PAUSE
